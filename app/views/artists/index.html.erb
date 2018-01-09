@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Artists</h1>
+<%= link_to 'Manage Artists', rails_admin_path %>
 
 <%= form_tag(artists_path, :method => "get", id: "search-form", remote: true) do %>
   <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "namesearch", type: "search", data: {autocomplete: autocomplete_artist_name_artists_path} %>
@@ -25,5 +26,3 @@
   <%= render 'artists' %>
 </table>
 <br>
-
-<%= link_to 'New Artist', new_artist_path %>
