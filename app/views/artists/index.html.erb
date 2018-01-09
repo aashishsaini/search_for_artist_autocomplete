@@ -3,9 +3,8 @@
 <h1>Artists</h1>
 
 <%= form_tag(artists_path, :method => "get", id: "search-form", remote: true) do %>
-    <!-- text field tag=action,args,identifier,placeholdertext... -->
-    <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "namesearch", type: "search", data: {autocomplete: autocomplete_artist_name_artists_path} %>
-    <%= submit_tag "Search" %>
+  <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "namesearch", type: "search", data: {autocomplete: autocomplete_artist_name_artists_path} %>
+  <%= submit_tag "Search" %>
 <% end %>
 <script type="text/javascript" charset="utf-8">
     $('#search').bind('railsAutocomplete.select', function(event, data){
