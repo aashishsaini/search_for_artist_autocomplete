@@ -5,10 +5,9 @@ class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
   def index
+    @artists = Artist.all.paginate(:page => params[:page])
     if params[:search]
       @artists = Artist.name_like("%#{params[:search]}%").paginate(:page => params[:page], :per_page => 10).order('name')
-    else
-      @artists = Artist.all.paginate(:page => params[:page])
     end
   end
 

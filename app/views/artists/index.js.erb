@@ -1,1 +1,2 @@
 $('#artist tbody').replaceWith('<%= j render 'artists' %>')
+$('#pagination').replaceWith('<%= j will_paginate @artists %>');
